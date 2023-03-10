@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Cycling</title>
+</head>
+<body>
+  <header class="header">
+    <div class="header__container">
+      <h1><a href="index.html">Profile</a></h1>
+      <nav class="header__container__nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#bicycle">Bicycle</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="fv">
+  </div>
+  <main>
+    <section class="about" id="about">
+      <div class="subttl"><h2>About</h2></div>
+      <div class="about__container">
+        <span class="about__container--img"></span>
+        <div class="about__container--txt">
+          <dl>
+            <dt>KAKERU MIYAICHI</dt>
+            <dd>テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキスト テキストテキストテキストテキストテキストテキストテキスト</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <section class="bicycle" id="bicycle">
+      <div class="subttl"><h2>Bicycle</h2></div>
+      <div class="bicycle__container">
+        <div class="bicycle__container__box">
+          <span class="bicycle__container__box--img"></span>
+          <div class="bicycle__container__box--txt">
+            <h3>タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </div>
+        </div>
+        <div class="bicycle__container__box">
+          <span class="bicycle__container__box--img"></span>
+          <div class="bicycle__container__box--txt">
+            <h3>タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </div>
+        </div>
+        <div class="bicycle__container__box">
+          <span class="bicycle__container__box--img"></span>
+          <div class="bicycle__container__box--txt">
+            <h3>タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p><small>&copy; 2020 Profile</small></p>
+  </footer>
+  <script>
+    const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+  for (let i = 0; i < smoothScrollTrigger.length; i++){
+    smoothScrollTrigger[i].addEventListener('click', (e) => {
+      e.preventDefault();
+      let href = smoothScrollTrigger[i].getAttribute('href');
+      let targetElement = document.getElementById(href.replace('#', ''));
+      const rect = targetElement.getBoundingClientRect().top;
+      const offset = window.pageYOffset;
+      const gap = 60;
+      const target = rect + offset - gap;
+      window.scrollTo({
+        top: target,
+        behavior: 'smooth',
+      });
+    });
+  }
+  </script>
+</body>
+</html>
